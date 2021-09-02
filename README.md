@@ -6,6 +6,7 @@ Edit variable expressions for
 1) $ADAPTERNAME$ -> fileNameWithoutExtension()
 2) $LAYOUT_ITEM$ -> completeSmart()
 
+
 Templates for ViewModel in both Kotlin and java
  
 Edit variable expressions for
@@ -13,3 +14,10 @@ Edit variable expressions for
 2) $MY_REPOSITORY$ -> completeSmart()
 3) $MY_IPREF$ -> completeSmart()
 
+
+Templates for ViewModel in both Kotlin and java
+
+Edit variable expressions for
+1) $REPOSITORY_NAME$ -> fileNameWithoutExtension()
+2) $MY_API$ -> completeSmart()
+3) $API_CALL_NAME$ -> completeSmart()
