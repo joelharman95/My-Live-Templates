@@ -23,7 +23,7 @@ public class $ADAPTERNAME$ extends androidx.recyclerview.widget.RecyclerView.Ada
         arrayList.addAll(_list);
         notifyDataSetChanged();
     }
-
+    
     public class $ADAPTERNAME$Holder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
 
         public $ADAPTERNAME$Holder(android.view.View view) {
