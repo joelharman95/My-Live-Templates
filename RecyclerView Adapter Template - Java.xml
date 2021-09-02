@@ -18,7 +18,7 @@ public class $ADAPTERNAME$ extends androidx.recyclerview.widget.RecyclerView.Ada
         return arrayList.size();
     }
 
-    public void addCustomerAddresses(java.util.List<String> _list) {
+    public void addList(java.util.List<String> _list) {
         arrayList.clear();
         arrayList.addAll(_list);
         notifyDataSetChanged();
