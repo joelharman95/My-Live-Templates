@@ -1,0 +1,21 @@
+public class $REPOSITORY_NAME$ {
+
+    private final $MY_API$ myApi;
+
+    @javax.inject.Inject
+    public $REPOSITORY_NAME$($MY_API$ _myApi) {
+        this.myApi = _myApi;
+    }
+
+    public io.reactivex.rxjava3.core.Observable<String> getCustomerAddress(String string) {
+        return io.reactivex.rxjava3.core.Observable.create(emitter ->
+                myApi.$API_CALL_NAME$(string).subscribeOn(io.reactivex.rxjava3.schedulers.Schedulers.io())
+                        .observeOn(io.reactivex.rxjava3.android.schedulers.AndroidSchedulers.mainThread())
+                        .subscribe(response -> {
+                            if (response != null) {
+                                emitter.onNext(response + "");
+                            }
+                        }, throwable -> emitter.onNext("Failed")));
+    }
+
+}
