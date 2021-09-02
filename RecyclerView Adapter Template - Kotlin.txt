@@ -1,0 +1,35 @@
+class $ADAPTERNAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$ADAPTERNAME$.$ADAPTERNAME$Holder>() {
+
+    private val arrayList = mutableListOf<String>()
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): $ADAPTERNAME$Holder {
+        return $ADAPTERNAME$Holder(
+            android.view.LayoutInflater.from(parent.context)
+                .inflate(R.layout.$LAYOUT_ITEM$, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: $ADAPTERNAME$Holder, position: Int) {
+        holder.bindUI(position)
+    }
+
+    override fun getItemCount() = arrayList.size
+
+    fun addList(_list: List<String>) {
+        arrayList.clear()
+        arrayList.addAll(_list)
+        notifyDataSetChanged()
+    }
+
+    inner class $ADAPTERNAME$Holder(private val view: android.view.View) :
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
+        fun bindUI(position: Int) {
+            view.apply {
+                arrayList[position].let {
+
+                }
+            }
+        }
+    }
+
+} 
