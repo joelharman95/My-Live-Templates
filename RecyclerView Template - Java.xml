@@ -1,0 +1,38 @@
+public class $ADAPTERNAME$ extends androidx.recyclerview.widget.RecyclerView.Adapter<$ADAPTERNAME$.$ADAPTERNAME$Holder> {
+
+    private final java.util.ArrayList<String> arrayList = new java.util.ArrayList<>();
+
+    @androidx.annotation.NonNull
+    @Override
+    public $ADAPTERNAME$Holder onCreateViewHolder(@androidx.annotation.NonNull android.view.ViewGroup parent, int viewType) {
+        return new $ADAPTERNAME$Holder(android.view.LayoutInflater.from(parent.getContext()).inflate(R.layout.$LAYOUT_ITEM$, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder(@androidx.annotation.NonNull $ADAPTERNAME$Holder holder, int position) {
+        holder.bindUI(position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+
+    public void addCustomerAddresses(java.util.List<String> _list) {
+        arrayList.clear();
+        arrayList.addAll(_list);
+        notifyDataSetChanged();
+    }
+
+    public class $ADAPTERNAME$Holder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
+
+        public $ADAPTERNAME$Holder(android.view.View view) {
+            super(view);
+        }
+
+        public void bindUI(int position) {
+
+        }
+    }
+
+}
