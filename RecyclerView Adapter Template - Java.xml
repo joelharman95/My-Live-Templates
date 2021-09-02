@@ -34,5 +34,5 @@ public class $ADAPTERNAME$ extends androidx.recyclerview.widget.RecyclerView.Ada
 
         }
     }
-
+    
 }
