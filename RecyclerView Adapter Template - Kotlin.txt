@@ -31,5 +31,5 @@ class $ADAPTERNAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$ADAPTER
             }
         }
     }
-
+    
 } 
