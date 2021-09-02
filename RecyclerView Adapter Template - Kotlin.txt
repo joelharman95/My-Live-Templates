@@ -20,7 +20,7 @@ class $ADAPTERNAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$ADAPTER
         arrayList.addAll(_list)
         notifyDataSetChanged()
     }
-
+    
     inner class $ADAPTERNAME$Holder(private val view: android.view.View) :
         androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         fun bindUI(position: Int) {
