@@ -1,0 +1,25 @@
+@dagger.hilt.android.lifecycle.HiltViewModel
+public class $VIEW_MODEL_NAME$ extends androidx.lifecycle.ViewModel {
+
+    private final $MY_REPOSITORY$ myRepository;
+    private final $MY_IPREF$ iPref;
+
+    private final androidx.lifecycle.MutableLiveData<String> _resString = new androidx.lifecycle.MutableLiveData<>();
+
+    public androidx.lifecycle.LiveData<String> resString = _resString;
+
+    @javax.inject.Inject
+    public MyViewModel($MY_REPOSITORY$ myRepository, $MY_IPREF$ iPref) {
+        this.myRepository = myRepository;
+        this.iPref = iPref;
+    }
+
+    public String getDeviceToken() {
+        return iPref.getDeviceToken();
+    }
+
+    public void getAppointmentList(String string) {
+        myRepository.getAppointmentList(string).subscribe(_resString::postValue);
+    }
+
+}
