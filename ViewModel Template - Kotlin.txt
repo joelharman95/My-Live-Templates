@@ -1,0 +1,18 @@
+class $VIEW_MODEL_NAME$(
+    private val repository: $MY_REPOSITORY$,
+    private val preferences: $MY_IPREF$
+) : androidx.lifecycle.ViewModel() {
+
+fun saveToken(token: String) = preferences.saveToken(token)
+
+    fun callApi(
+        name: String,
+        onSuccess: com.mespace.di.OnSuccess<String>,
+        onError: com.mespace.di.OnError<String>
+    ) {
+        viewModelScope.launch {
+            repository.callApi(name, onSuccess, onError)
+        }
+    }
+
+}
