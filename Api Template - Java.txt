@@ -1,0 +1,5 @@
+public interface $API_NAME$ {
+
+    @retrofit2.http.POST($PATH_NAME$)
+    io.reactivex.rxjava3.core.Observable<$RESPONSE$> $METHOD_NAME$(@retrofit2.http.Body String string);
+}
