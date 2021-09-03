@@ -14,5 +14,5 @@ fun saveToken(token: String) = preferences.saveToken(token)
             repository.callApi(string, onSuccess, onError)
         }
     }
-
+    
 }
