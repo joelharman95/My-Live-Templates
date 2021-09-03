@@ -1,0 +1,8 @@
+interface $API_NAME$ {
+
+    @retrofit2.http.POST($PATH_NAME$)
+    suspend fun $METHOD_NAME$(
+        @retrofit2.http.Body string: String
+    ): retrofit2.Response<$RESPONSE$>
+
+}
