@@ -19,7 +19,7 @@ public class $VIEW_MODEL_NAME$ extends androidx.lifecycle.ViewModel {
     }
 
     public void getAppointmentList(String string) {
-        myRepository.getAppointmentList(string).subscribe(_resString::postValue);
+        myRepository.callApi(string).subscribe(_resString::postValue);
     }
 
 }
