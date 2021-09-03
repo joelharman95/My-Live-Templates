@@ -3,6 +3,15 @@
 Templates for RecyclerView in both Kotlin and java
 
 Edit variable expressions for
+1) $API_NAME$ -> fileNameWithoutExtension()
+2) $PATH_NAME$ -> completeSmart()
+3) $METHOD_NAME$ -> completeSmart()
+4) $RESPONSE$ -> completeSmart()
+
+
+Templates for RecyclerView in both Kotlin and java
+
+Edit variable expressions for
 1) $ADAPTERNAME$ -> fileNameWithoutExtension()
 2) $LAYOUT_ITEM$ -> completeSmart()
 
