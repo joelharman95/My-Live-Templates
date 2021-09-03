@@ -1,0 +1,43 @@
+private class $REPOSITORY_NAME$Impl(private val api: $MY_API$) : $REPOSITORY_NAME$ {
+
+    override suspend fun $API_CALL_NAME$(
+        string: String,
+        onSuccess: com.mespace.di.OnSuccess<String>,
+        onError: com.mespace.di.OnError<String>
+    ) {
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            try {
+                val response = api.$API_CALL_NAME$(string = string)
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        if (it.status.toString().isSuccess())
+                            kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) { onSuccess(it) }
+                        else
+                            kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) { onError(it.message) }
+                    }
+                } else {
+                    kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
+                        onError(response.message().toString())
+                    }
+                }
+            } catch (e: Exception) {
+                kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {}
+            }
+        }
+    }
+
+}
+
+interface $REPOSITORY_NAME$ {
+
+    suspend fun $API_CALL_NAME$(
+        string: String,
+        onSuccess: com.mespace.di.OnSuccess<String>,
+        onError: com.mespace.di.OnError<String>
+    )
+
+    companion object Factory {
+        fun create(api: $MY_API$): $REPOSITORY_NAME$ = $REPOSITORY_NAME$Impl(api)
+    }
+
+}
