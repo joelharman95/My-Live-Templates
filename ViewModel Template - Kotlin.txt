@@ -6,12 +6,12 @@ class $VIEW_MODEL_NAME$(
 fun saveToken(token: String) = preferences.saveToken(token)
 
     fun callApi(
-        name: String,
+        string: String,
         onSuccess: com.mespace.di.OnSuccess<String>,
         onError: com.mespace.di.OnError<String>
     ) {
         viewModelScope.launch {
-            repository.callApi(name, onSuccess, onError)
+            repository.callApi(string, onSuccess, onError)
         }
     }
 
