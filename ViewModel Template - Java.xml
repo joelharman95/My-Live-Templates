@@ -18,7 +18,7 @@ public class $VIEW_MODEL_NAME$ extends androidx.lifecycle.ViewModel {
         return iPref.getDeviceToken();
     }
 
-    public void getAppointmentList(String string) {
+    public void callApi(String string) {
         myRepository.callApi(string).subscribe(_resString::postValue);
     }
 
