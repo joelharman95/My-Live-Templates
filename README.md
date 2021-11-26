@@ -1,6 +1,6 @@
 # My-Live-Templates
 
-Templates for RecyclerView in both Kotlin and java
+Templates for Api Template in both Kotlin and java
 
 Edit variable expressions for
 1) $API_NAME$ -> fileNameWithoutExtension()
