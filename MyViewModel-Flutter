@@ -1,0 +1,9 @@
+@injectable
+class $VIEWMODEL_NAME$ extends BaseViewModel {
+    String title = "";
+    TextEditingController errorMessage = TextEditingController();
+    
+  void showError(String msg) {
+    errorMessage.text = msg;
+  }
+}
