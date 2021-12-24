@@ -1,0 +1,56 @@
+class $SCREEN_NAME$ extends StatelessWidget {
+  const $SCREEN_NAME$({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ViewModelBuilder.reactive(
+      viewModelBuilder: () => locator<$VIEWMODEL_NAME$>(),
+      builder: (context, $VIEWMODEL_NAME$ model, child) => Scaffold(
+        backgroundColor: Colors.white,
+        body: _$SCREEN_STATE_NAME$(),
+      ),
+      onModelReady: ($VIEWMODEL_NAME$ model) {
+        model.setBusy(true);
+      },
+      disposeViewModel: false,
+    );
+  }
+}
+
+class _$SCREEN_STATE_NAME$ extends ViewModelWidget<$VIEWMODEL_NAME$> {
+
+  void listenForError(BuildContext context, $VIEWMODEL_NAME$ viewModel) {
+    viewModel.errorMessage.addListener(() {
+      if(viewModel.errorMessage.text != "") {
+        SnackBarWidget.showErrorToast(context, viewModel.errorMessage.text);
+        viewModel.errorMessage.clear();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context, $VIEWMODEL_NAME$ViewModel viewModel) {
+    Size screenSize = MediaQuery.of(context).size;
+    listenForError(context, viewModel);
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: AppColors.darkBackgroundColor),
+        title: Text(viewModel.title, style: const TextStyle(color: AppColors.darkBackgroundColor),),
+      ),
+      body: Stack(
+        children: [
+          Image.asset("assets/images/niramai_logo.png", width: spacing_192, height: spacing_192, fit: BoxFit.contain, ),
+          _progressBar(viewModel),
+        ]
+      ),
+    );
+  }
+
+  Widget _progressBar($VIEWMODEL_NAME$ViewModel viewModel) {
+    return Visibility(
+        visible: viewModel.isBusy,
+        child: const Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(AppColors.primaryColor),),)
+    );
+  }
+
+}
